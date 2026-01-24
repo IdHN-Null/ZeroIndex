@@ -1,9 +1,0 @@
-{
-  "type": "category",
-  "meta": {
-    "title": { "en": "User Guide", "ko": "사용 가이드" },
-    "description": { "en": "How to use this platform.", "ko": "이 플랫폼을 사용하는 방법입니다." },
-    "accentColor": "#F59E0B",
-    "order": 1
-  }
-}
