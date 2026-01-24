@@ -1,0 +1,24 @@
+{
+  "type": "post",
+  "meta": {
+    "title": {
+      "en": "Format Guide: Viewer Stress Test",
+      "ko": "포맷 가이드: 뷰어 스트레스 테스트",
+      "ja": "フォーマットガイド: ビューア検証",
+      "zh": "格式指南：查看器压力测试",
+      "es": "Guia de formato: prueba del visor"
+    },
+    "description": {
+      "en": "A single post containing every supported block.",
+      "ko": "지원하는 모든 블록을 담은 단일 문서.",
+      "ja": "対応ブロックをすべて含む単一ドキュメント。",
+      "zh": "包含所有支持模块的单一文档。",
+      "es": "Un solo articulo con todos los bloques compatibles."
+    }
+  },
+  "postMeta": {
+    "date": "2026-01-24",
+    "tags": ["guide", "format", "viewer"],
+    "type": "post"
+  }
+}
