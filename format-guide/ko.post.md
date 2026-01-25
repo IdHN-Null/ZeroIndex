@@ -5,18 +5,25 @@ date: "2026-01-24"
 tags: ["guide", "format", "viewer"]
 author: "ZeroIndex"
 type: "post"
+htmlPolicy: sanitize
 ---
 
-이 문서는 포스트 뷰어의 렌더링을 검증하기 위한 **포맷 테스트**입니다. 강조, `코드`, 표, 도표 등을 포함합니다.
+This guide is a comprehensive format test for the post viewer. It mixes inline styles, blocks, and custom directives to validate rendering.
 
-## 인라인 스타일
-- 굵게: **bold text**
-- 기울임: *italic text*
-- 취소선: ~~deprecated~~
-- 인라인 코드: `const answer = 42;`
-- 링크: [OpenAI](https://openai.com)
+## Repeated Heading
+This heading appears twice to validate slug uniqueness.
 
-## 리스트
+## Repeated Heading
+This second instance should receive a unique id.
+
+## Inline styles
+- Bold: **bold text**
+- Italic: *italic text*
+- Strikethrough: ~~deprecated~~
+- Inline code: `const answer = 42;`
+- Link: [OpenAI](https://openai.com)
+
+## Lists
 Unordered:
 - First
 - Second
@@ -31,14 +38,14 @@ Tasks:
 - [x] Completed item
 - [ ] Pending item
 
-## 테이블
+## Table
 | Feature | Status | Note |
 | --- | --- | --- |
-| Table scroll | OK | horizontal overflow |
-| Code block | OK | syntax highlight |
-| Mermaid | OK | svg render |
+| Table width | Auto | Should expand with content |
+| Long cell | OK | This cell contains a longer description to test sizing |
+| Mermaid | OK | SVG render |
 
-## 코드 블록
+## Code blocks
 ```ts
 type User = {
   id: string;
@@ -56,32 +63,28 @@ https://example.com/some/really/really/really/really/really/really/really/really
 ```
 
 Preview card:
-```preview
+:::preview url="https://example.com"
 https://example.com
-```
+:::
 
-## 콜아웃
+## Callouts
 :::note title="Note"
 This is a note callout with a title.
+:::
+
+:::callout type=warning title="Policy"
+This is a callout directive using explicit type and title.
 :::
 
 :::tip title="Tip"
 Short tips are highlighted in a friendly tone.
 :::
 
-:::warning title="Warning"
-Be careful with changes that affect layout.
-:::
-
 :::danger title="Danger"
 This section flags destructive operations.
 :::
 
-:::info title="Info"
-Extra context that does not fit inline.
-:::
-
-## 스포일러
+## Spoiler
 :::spoiler summary="Click to reveal"
 Hidden content that is revealed on demand.
 :::
@@ -94,7 +97,7 @@ graph TD
   B -->|No| D[Revise]
 ```
 
-## 수식
+## Math
 Inline math: $E=mc^2$ and $a^2+b^2=c^2$.
 
 Block math:
@@ -102,18 +105,26 @@ $$
 \\int_0^\\infty e^{-x} dx = 1
 $$
 
-## 이미지
+## Image
 ![Sample cover](https://placehold.co/1200x600/png)
 
-## 인용문
+## Blockquote
 > A calm mind brings inner strength and self-confidence.
 
 ## Raw HTML
-<div style="padding:12px;border:1px dashed #999;border-radius:12px;background:#faf7f2;">
-  Inline HTML block to test rehype-raw.
+<div class="raw-html-block">
+  <strong>Raw HTML</strong> is rendered via rehype-raw and sanitized by policy.
 </div>
 
-## I18n 블록
-:::i18n id=hero
-This block is tagged for synchronized updates across languages.
+## I18n blocks
+:::i18n lang="en" id="greeting"
+English block for the current language.
 :::
+
+:::i18n lang="ko" id="greeting"
+Korean block for the current language.
+:::
+
+<i18n-block lang="ja" data-i18n-id="greeting">
+Japanese block rendered from raw HTML.
+</i18n-block>
