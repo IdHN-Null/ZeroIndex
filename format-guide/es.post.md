@@ -1,51 +1,51 @@
 ---
-title: "Guia de formato: prueba del visor"
-description: "Un solo articulo con todos los bloques compatibles."
+title: "Prueba final de formato: todo incluido"
+description: "Un solo post con todos los bloques y directivas compatibles."
 date: "2026-01-24"
-tags: ["guide", "format", "viewer"]
+tags: ["guide", "format", "final-test"]
 author: "ZeroIndex"
-type: "post"
+type: "notice"
 htmlPolicy: sanitize
 ---
 
-This guide is a comprehensive format test for the post viewer. It mixes inline styles, blocks, and custom directives to validate rendering.
+Esta es la prueba final del renderizador. Todo se activa solo con bloques basados en etiquetas.
 
-## Repeated Heading
-This heading appears twice to validate slug uniqueness.
+## Encabezado repetido
+Este encabezado aparece dos veces para verificar los slugs ?nicos.
 
-## Repeated Heading
-This second instance should receive a unique id.
+## Encabezado repetido
+La segunda instancia debe tener un id distinto.
 
-## Inline styles
-- Bold: **bold text**
-- Italic: *italic text*
-- Strikethrough: ~~deprecated~~
-- Inline code: `const answer = 42;`
-- Link: [OpenAI](https://openai.com)
+## Estilos en linea
+- Negrita: **texto en negrita**
+- Cursiva: *texto en cursiva*
+- Tachado: ~~deprecated~~
+- Codigo en linea: `const answer = 42;`
+- Enlace: [OpenAI](https://openai.com)
 
-## Lists
-Unordered:
-- First
-- Second
-  - Nested item
+## Listas
+Sin orden:
+- Primero
+- Segundo
+  - Subitem
 
-Ordered:
-1. Step one
-2. Step two
-3. Step three
+Ordenada:
+1. Paso uno
+2. Paso dos
+3. Paso tres
 
-Tasks:
-- [x] Completed item
-- [ ] Pending item
+Tareas:
+- [x] Hecho
+- [ ] Pendiente
 
-## Table
-| Feature | Status | Note |
+## Tabla
+| Funcion | Estado | Nota |
 | --- | --- | --- |
-| Table width | Auto | Should expand with content |
-| Long cell | OK | This cell contains a longer description to test sizing |
-| Mermaid | OK | SVG render |
+| Ancho | Auto | Debe crecer con el contenido |
+| Celda larga | OK | Prueba de textos extensos |
+| Mermaid | OK | Render SVG |
 
-## Code blocks
+## Bloques de codigo
 ```ts
 type User = {
   id: string;
@@ -57,36 +57,78 @@ export const greet = (user: User) => {
 };
 ```
 
-Long line overflow test:
+Prueba de linea larga:
 ```
 https://example.com/some/really/really/really/really/really/really/really/really/long/path?with=query&and=more
 ```
 
-Preview card:
-:::preview url="https://example.com"
+## Tarjeta de vista previa (etiqueta)
+:::preview url="https://example.com" title="Example Domain" description="Descripcion breve claramente separada del texto."
 https://example.com
 :::
 
-## Callouts
-:::note title="Note"
-This is a note callout with a title.
+## Callouts (etiquetas)
+:::note title="Nota"
+Ejemplo de nota con titulo.
 :::
 
-:::callout type=warning title="Policy"
-This is a callout directive using explicit type and title.
+:::callout type=warning title="Politica" icon="warning"
+Callout con tipo y titulo explicitos.
 :::
 
 :::tip title="Tip"
-Short tips are highlighted in a friendly tone.
+Un tip corto en tono amable.
 :::
 
-:::danger title="Danger"
-This section flags destructive operations.
+:::danger title="Peligro"
+Advertencia para operaciones destructivas.
 :::
 
-## Spoiler
-:::spoiler summary="Click to reveal"
-Hidden content that is revealed on demand.
+:::info title="Info"
+Informacion neutral de contexto.
+:::
+
+:::callout type=custom title="Colores personalizados" accent="#6D8FAF" bg="#E3EDF6" border="#6D8FAF" icon="info"
+Callout con colores e icono personalizados.
+:::
+
+## Bloque de comparacion (etiqueta)
+:::compare
+### Antes
+El diseno anterior era mas denso y con menos imagenes.
+
+- Ancho de lectura limitado
+- Menos enfasis
+- Callouts limitados
+
+<!-- compare -->
+
+### Despues
+El nuevo diseno prioriza aire, imagenes y jerarquia.
+
+- Ritmo de lectura mas amplio
+- Callouts y previews ricos
+- Jerarquia clara
+:::
+
+## Timeline (etiqueta)
+:::timeline
+- [2026-01-24] Lanzamiento inicial del nuevo visor.
+- [2026-01-23] Vista de comparacion y mejoras en tablas.
+- [2026-01-22] Correcciones de Mermaid y matematicas.
+- [2026-01-21] Ajustes en callouts, spoilers y codigo.
+:::
+
+## Spoiler (etiqueta)
+:::spoiler summary="Mostrar contenido"
+Contenido oculto hasta que el lector lo solicite.
+:::
+
+## Galeria (etiqueta)
+:::gallery title="Galeria de muestra" autoplay=true interval=3200
+https://placehold.co/1200x700/png | Portada amplia
+https://placehold.co/900x1200/png | Muestra vertical
+![Coastline](https://placehold.co/1000x700/png)
 :::
 
 ## Mermaid
@@ -97,34 +139,54 @@ graph TD
   B -->|No| D[Revise]
 ```
 
-## Math
-Inline math: $E=mc^2$ and $a^2+b^2=c^2$.
+## Matematicas
+Inline: $E=mc^2$ y $a^2+b^2=c^2$.
 
-Block math:
+Bloque:
 $$
-\\int_0^\\infty e^{-x} dx = 1
+\int_0^\infty e^{-x} dx = 1
 $$
 
-## Image
+## Imagen
 ![Sample cover](https://placehold.co/1200x600/png)
 
-## Blockquote
-> A calm mind brings inner strength and self-confidence.
+## Cita
+> Una mente calmada aporta fuerza interior y confianza.
+
+## Bloque de cita (etiqueta)
+:::quote mark=">>" author="Meditaciones"
+Bloque de cita con marca y autor.
+:::
 
 ## Raw HTML
 <div class="raw-html-block">
-  <strong>Raw HTML</strong> is rendered via rehype-raw and sanitized by policy.
+  <strong>Raw HTML</strong> se renderiza con rehype-raw y se limpia segun la politica.
+  <div class="raw-html-box">
+    <span>Los elementos HTML en linea tambien se muestran.</span>
+    <svg viewBox="0 0 120 24" width="120" height="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 12h116" stroke="currentColor" stroke-width="2" />
+      <circle cx="12" cy="12" r="6" fill="currentColor" />
+    </svg>
+  </div>
 </div>
 
-## I18n blocks
+## Bloques I18n (etiqueta)
 :::i18n lang="en" id="greeting"
-English block for the current language.
+Bloque en ingles.
 :::
 
 :::i18n lang="ko" id="greeting"
-Korean block for the current language.
+Bloque en coreano.
 :::
 
-<i18n-block lang="ja" data-i18n-id="greeting">
-Japanese block rendered from raw HTML.
-</i18n-block>
+:::i18n lang="ja" id="greeting"
+Bloque en japones.
+:::
+
+:::i18n lang="zh" id="greeting"
+Bloque en chino.
+:::
+
+:::i18n lang="es" id="greeting"
+Bloque en espanol.
+:::
