@@ -1,0 +1,12 @@
+﻿{
+  "type": "post",
+  "meta": {
+    "title": { "ko": "🔥 렌더러 통합 테스트 가이드", "en": "Integrated Renderer Guide", "ja": "統合レンダラーガイド" },
+    "description": { "ko": "모든 기능을 한 번에 확인하세요.", "en": "Check all features at once.", "ja": "すべての機能を一度に確認してください。" }
+  },
+  "postMeta": {
+    "date": "2026-03-16",
+    "tags": ["test", "master"],
+    "pinned": true
+  }
+}
