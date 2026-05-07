@@ -1,2 +1,6 @@
 # ZeroIndex
 Programming Language Basic Learn Site.
+ABCD
+123
+FFFFFF
+32542536352532325325532532352
